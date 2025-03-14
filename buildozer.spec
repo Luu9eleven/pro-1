@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = My Application
+title =AoC trading bot
 
 # (str) Package name
-package.name = myapp
+package.name = AoCTradingBot
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -37,7 +37,17 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy
+requirements =python3,\
+# please enclose in double quotes 
+    kivy==2.1.0,\
+# e.g. android.gradle_repositories = "maven { url 'https://kotlin.bintray.com/ktor' }"
+    kivymd,\
+#android.add_gradle_repositories =
+    pillow,\
+    numpy,\
+    pandas,\
+    tensorflow-lite,\
+    metatrader5
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
