@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-22.04
+
+    - name: Setup Node
+  uses: actions/setup-node@v4
+  with:
+    node-version: '20.x'
+
+    - name: Install Dependencies
+  run: npm install
+
+  steps:
+- run: npm publish
+  if: github.event_name == 'push'
